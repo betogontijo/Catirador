@@ -91,12 +91,12 @@ function ComponentsStack(props) {
 function HomeStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
-      <Stack.Screen 
+      <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{
           header: ({ navigation, scene }) => (
-            <Header 
+            <Header
               search
               tabs
               title="Home"
@@ -106,7 +106,7 @@ function HomeStack(props) {
           )
         }}
       />
-      <Stack.Screen 
+      <Stack.Screen
         name="Pro"
         component={ProScreen}
         options={{
@@ -369,7 +369,7 @@ const HomeStack = createStackNavigator({
   },
 },
 {
-  cardStyle: { 
+  cardStyle: {
     backgroundColor: '#EEEEEE', //this is the backgroundColor for the app
   },
   transitionConfig,

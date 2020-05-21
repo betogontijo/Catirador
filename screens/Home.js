@@ -1,16 +1,17 @@
 import React from 'react';
-import { StyleSheet, Dimensions, ScrollView } from 'react-native';
-import { Button, Block, Text, Input, theme } from 'galio-framework';
+import {StyleSheet, Dimensions, ScrollView} from 'react-native';
+import {Button, Block, Text, Input, theme} from 'galio-framework';
 
-import { Icon, Product } from '../components/';
+import {Icon, Product} from '../components/';
 
-const { width } = Dimensions.get('screen');
+const {width} = Dimensions.get('screen');
 import products from '../constants/products';
+import MagnetometerSensor from "./MagnetometerSensor";
 
 export default class Home extends React.Component {
   renderSearch = () => {
-    const { navigation } = this.props;
-    const iconCamera = <Icon size={16} color={theme.COLORS.MUTED} name="zoom-in" family="material" />
+    const {navigation} = this.props;
+    const iconCamera = <Icon size={16} color={theme.COLORS.MUTED} name="zoom-in" family="material"/>
 
     return (
       <Input
@@ -23,21 +24,21 @@ export default class Home extends React.Component {
       />
     )
   }
-  
+
   renderTabs = () => {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
 
     return (
       <Block row style={styles.tabs}>
         <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('Pro')}>
           <Block row middle>
-            <Icon name="grid" family="feather" style={{ paddingRight: 8 }} />
+            <Icon name="grid" family="feather" style={{paddingRight: 8}}/>
             <Text size={16} style={styles.tabTitle}>Categories</Text>
           </Block>
         </Button>
         <Button shadowless style={styles.tab} onPress={() => navigation.navigate('Pro')}>
           <Block row middle>
-            <Icon size={16} name="camera-18" family="GalioExtra" style={{ paddingRight: 8 }} />
+            <Icon size={16} name="camera-18" family="GalioExtra" style={{paddingRight: 8}}/>
             <Text size={16} style={styles.tabTitle}>Best Deals</Text>
           </Block>
         </Button>
@@ -51,13 +52,14 @@ export default class Home extends React.Component {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.products}>
         <Block flex>
-          <Product product={products[0]} horizontal />
+          <MagnetometerSensor></MagnetometerSensor>
+          <Product product={products[0]} horizontal/>
           <Block flex row>
-            <Product product={products[1]} style={{ marginRight: theme.SIZES.BASE }} />
-            <Product product={products[2]} />
+            <Product product={products[1]} style={{marginRight: theme.SIZES.BASE}}/>
+            <Product product={products[2]}/>
           </Block>
-          <Product product={products[3]} horizontal />
-          <Product product={products[4]} full />
+          <Product product={products[3]} horizontal/>
+          <Product product={products[4]} full/>
         </Block>
       </ScrollView>
     )
@@ -74,7 +76,7 @@ export default class Home extends React.Component {
 
 const styles = StyleSheet.create({
   home: {
-    width: width,    
+    width: width,
   },
   search: {
     height: 48,

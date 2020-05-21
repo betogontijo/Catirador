@@ -1,0 +1,17 @@
+{
+  "name": "Catirador",
+  "displayName": "Catirador",
+  "expo": {
+    "name": "Catirador",
+    "slug": "Catirador",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
